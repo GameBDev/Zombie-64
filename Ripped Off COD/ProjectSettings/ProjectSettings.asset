@@ -614,7 +614,10 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
-    Collab: 1
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -635,9 +638,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 555e5416-1dd8-43b3-907d-1e47a209bff0
+  cloudProjectId: 2e37a6bf-da1a-48cb-9bfc-a936ae4758dc
   framebufferDepthMemorylessMode: 0
-  projectName: Ripped Off COD
+  projectName: Ripped Off COD (2)
   organizationId: kjb-studios
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

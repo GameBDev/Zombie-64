@@ -124,7 +124,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14166
+  m_Name: pb_Mesh12328
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1871,12 +1871,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6822988962071509824}
-    - target: {fileID: 7017550182051468347, guid: 311318a1ebfd2cc4981ca494a8683349,
-        type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 4343035967038657950, guid: 0ad5955b1a3182845ad10ea523cd3010,
-        type: 3}
     - target: {fileID: 7017550182051468357, guid: 311318a1ebfd2cc4981ca494a8683349,
         type: 3}
       propertyPath: m_Name
