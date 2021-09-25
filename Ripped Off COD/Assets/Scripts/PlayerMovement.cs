@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Jumping")]
     public float jumpForce = 5f;
+    public float gravity;
+    public float fallForce = 5f;
+    public float fallingAcceleration;
 
     [Header("KeyBinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
@@ -80,6 +83,19 @@ public class PlayerMovement : MonoBehaviour
         }
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
+
+        gravity = Mathf.Lerp(gravity, fallForce, acceleration * Time.deltaTime);
+
+        rb.AddForce(Vector3.down * gravity * Time.deltaTime);
+
+        if (!isGrounded)
+        {
+            gravity = fallForce;
+        }
+        else if (isGrounded)
+        {
+            gravity = 0;
+        }
     }
     void MyInput()
     {
@@ -96,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(sprintKey) && isGrounded)
         {
-            moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, acceleration * Time.deltaTime);
+            moveSpeed = Mathf.Lerp(moveSpeed, sprintSpeed, fallingAcceleration * Time.deltaTime);
         }
         else
         {
