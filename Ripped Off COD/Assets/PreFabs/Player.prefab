@@ -39,11 +39,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2947957657695783091}
+  - component: {fileID: 2947957657695783099}
   - component: {fileID: 2947957657695783092}
   - component: {fileID: 2947957657695783093}
   - component: {fileID: 2947957657695783090}
   - component: {fileID: 2947957657695783089}
-  - component: {fileID: 2947957657695783099}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -68,6 +68,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2947957657695783099
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947957657695783094}
+  m_Material: {fileID: 13400000, guid: eea612f1f898393479c8e0734293f9fa, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9972982
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.49864912, z: 0}
 --- !u!54 &2947957657695783092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -97,6 +111,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oriantation: {fileID: 2947957657931543154}
+  maxHealth: 0
+  currentHelth: 0
+  healthBar: {fileID: 0}
+  damageInt: 0
   moveSpeed: 6
   airMultiplier: 0.5
   walkSpeed: 4
@@ -154,20 +172,6 @@ MonoBehaviour:
   wallrunfovTime: 20
   camTilt: 0
   camTiltTime: 0
---- !u!136 &2947957657695783099
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2947957657695783094}
-  m_Material: {fileID: 13400000, guid: eea612f1f898393479c8e0734293f9fa, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.9972982
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.49864912, z: 0}
 --- !u!1 &2947957657918645069
 GameObject:
   m_ObjectHideFlags: 0

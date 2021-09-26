@@ -465,7 +465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58058424903ca4f47be9ea2f31060592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
   despawnTime: 0.5
 --- !u!114 &7017550182051468347
 MonoBehaviour:
@@ -490,8 +490,9 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 1
   timeBetweenAttacks: 1
-  projectile: {fileID: 0}
-  sightRange: 9
+  projectile: {fileID: 4359187642025396424, guid: 4da74e4aa902d6e45be7fe23282bff25,
+    type: 3}
+  sightRange: 10
   attackRange: 1.5
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -543,7 +544,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.0813189
+  m_Radius: 0.4892084
+  m_Height: 1.910469
   m_Direction: 1
-  m_Center: {x: 0, y: -0.021207333, z: 0}
+  m_Center: {x: -3.282727e-11, y: -0.0069417953, z: -0.0107916}

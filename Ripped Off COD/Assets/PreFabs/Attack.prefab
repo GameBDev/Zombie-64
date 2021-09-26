@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4359187642025396427}
   - component: {fileID: 114632845082656850}
+  - component: {fileID: 65918165079938818}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Name: Attack
+  m_TagString: Attack
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -44,3 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.2
+--- !u!65 &65918165079938818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4359187642025396424}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4057145, y: 0.30125904, z: 0.30360222}
+  m_Center: {x: 0.011686087, y: 0.04943037, z: -0.08796978}

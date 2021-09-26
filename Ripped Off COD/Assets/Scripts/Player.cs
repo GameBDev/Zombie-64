@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     float playerHeight = 2f;
 
     [SerializeField] Transform oriantation;
+
+    [Header("Health")]
+    [SerializeField] int maxHealth;
+    [SerializeField] int currentHealth;
+    [SerializeField] HealthBar healthBar;
+    [SerializeField] int damageInt;
+    bool canDamage;
 
     [Header("Movement")]
     [SerializeField] float moveSpeed = 6f;    
@@ -68,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
     private void Update()
     {
@@ -84,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
 
+
         gravity = Mathf.Lerp(gravity, fallForce, acceleration * Time.deltaTime);
 
         rb.AddForce(Vector3.down * gravity * Time.deltaTime);
@@ -95,6 +106,16 @@ public class PlayerMovement : MonoBehaviour
         else if (isGrounded)
         {
             gravity = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            TakeDamage(damageInt);
+        }
+
+        if (canDamage)
+        {
+            TakeDamage(damageInt);
         }
     }
     void MyInput()
@@ -147,6 +168,21 @@ public class PlayerMovement : MonoBehaviour
         else if (!isGrounded)
         {
             rb.AddForce(moveDirection.normalized * moveSpeed * movementMultiplier * airMultiplier, ForceMode.Acceleration);
+        }
+    }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+
+        canDamage = false;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Attack")
+        {
+            canDamage = true;
         }
     }
 }
