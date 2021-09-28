@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Player : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] HealthBar healthBar;
     [SerializeField] int damageInt;
-    
+    [SerializeField] Text text;
+
 
     [Header("Attack Damages")]
     [SerializeField] int Attack1;
@@ -119,6 +121,8 @@ public class Player : MonoBehaviour
         {
             gravity = 0;
         }
+
+        text.text = currentHealth.ToString();
 
         if (Input.GetKeyDown(KeyCode.Y))
         {

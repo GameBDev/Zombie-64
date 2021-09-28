@@ -6,6 +6,9 @@ public class EnemyAi : MonoBehaviour
     public NavMeshAgent agent;
 
     public Transform player;
+    public Transform attackSpawn;
+
+    public Vector3 attackSpawnVector;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -38,6 +41,8 @@ public class EnemyAi : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
+
+        attackSpawnVector = attackSpawn.position;
     }
 
     private void Patroling()
@@ -80,7 +85,7 @@ public class EnemyAi : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Rigidbody rb = Instantiate(projectile, attackSpawnVector, Quaternion.identity).GetComponent<Rigidbody>();
 
             ///End of attack code
 

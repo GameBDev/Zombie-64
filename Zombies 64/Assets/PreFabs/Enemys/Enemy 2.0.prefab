@@ -585,6 +585,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &1256458145813528073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655238869225896244}
+  m_Layer: 0
+  m_Name: Attack Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &655238869225896244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256458145813528073}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7869119260430585216}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1801409712906139796
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7869119258964585213}
+  - {fileID: 655238869225896244}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -975,7 +1006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58058424903ca4f47be9ea2f31060592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 30
   despawnTime: 0.5
 --- !u!114 &7869119260430585219
 MonoBehaviour:
@@ -991,6 +1022,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7869119260430585218}
   player: {fileID: 0}
+  attackSpawn: {fileID: 655238869225896244}
+  attackSpawnVector: {x: 0, y: 0, z: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
@@ -999,8 +1032,8 @@ MonoBehaviour:
     m_Bits: 1024
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 1
-  timeBetweenAttacks: 1
-  projectile: {fileID: 4359187642025396424, guid: 4da74e4aa902d6e45be7fe23282bff25,
+  timeBetweenAttacks: 2
+  projectile: {fileID: 7404843171393921184, guid: f615063aee540cd4cb615bd50d8eaa9e,
     type: 3}
   sightRange: 14
   attackRange: 1.5
@@ -1016,7 +1049,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5.8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

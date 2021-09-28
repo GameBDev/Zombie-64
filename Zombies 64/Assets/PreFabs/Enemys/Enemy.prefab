@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 203536220}
   - component: {fileID: 203536223}
   - component: {fileID: 203536222}
-  - component: {fileID: 203536221}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -78,19 +77,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &203536221
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 203536219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1028559011
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +88,6 @@ GameObject:
   - component: {fileID: 1028559012}
   - component: {fileID: 1028559015}
   - component: {fileID: 1028559014}
-  - component: {fileID: 1028559013}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -169,19 +154,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1028559013
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028559011}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1325671771
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +402,7 @@ GameObject:
   - component: {fileID: 7017550182051468347}
   - component: {fileID: 7017550182051468346}
   - component: {fileID: 7017550182051468350}
-  - component: {fileID: 7017550182051468351}
+  - component: {fileID: 1669573470}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -450,6 +422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7017550181642367813}
+  - {fileID: 488773335827491497}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -481,6 +454,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7017550182051468346}
   player: {fileID: 0}
+  attackSpawn: {fileID: 488773335827491497}
+  attackSpawnVector: {x: 0, y: 0, z: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
@@ -489,8 +464,8 @@ MonoBehaviour:
     m_Bits: 1024
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 1
-  timeBetweenAttacks: 1
-  projectile: {fileID: 4359187642025396424, guid: 4da74e4aa902d6e45be7fe23282bff25,
+  timeBetweenAttacks: 1.5
+  projectile: {fileID: 1175156684494644080, guid: 65a90d314602b4441b479c836c280a06,
     type: 3}
   sightRange: 10
   attackRange: 1.5
@@ -506,7 +481,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -534,8 +509,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &7017550182051468351
-CapsuleCollider:
+--- !u!65 &1669573470
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -544,7 +519,36 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.4892084
-  m_Height: 1.910469
-  m_Direction: 1
-  m_Center: {x: -3.282727e-11, y: -0.0069417953, z: -0.0107916}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.7516403, z: 1}
+  m_Center: {x: 0, y: 0.1327858, z: 0}
+--- !u!1 &7918272104508170175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488773335827491497}
+  m_Layer: 0
+  m_Name: Attack Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488773335827491497
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7918272104508170175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7017550182051468344}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
