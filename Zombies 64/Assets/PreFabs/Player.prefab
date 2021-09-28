@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 2947957657695783093}
   - component: {fileID: 2947957657695783090}
   - component: {fileID: 2947957657695783089}
+  - component: {fileID: 405869751}
   m_Layer: 10
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,10 +112,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oriantation: {fileID: 2947957657931543154}
-  maxHealth: 0
-  currentHelth: 0
+  maxHealth: 100
+  currentHealth: 0
   healthBar: {fileID: 0}
-  damageInt: 0
+  damageInt: 10
+  Attack1: 10
+  Attack2: 15
+  Attack3: 20
+  Attack4: 25
+  Attack5: 30
   moveSpeed: 6
   airMultiplier: 0.5
   walkSpeed: 4
@@ -172,6 +178,20 @@ MonoBehaviour:
   wallrunfovTime: 20
   camTilt: 0
   camTiltTime: 0
+--- !u!136 &405869751
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947957657695783094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.6383157
+  m_Height: 2.0902443
+  m_Direction: 1
+  m_Center: {x: 0.012272716, y: 0.5040884, z: -0.013288021}
 --- !u!1 &2947957657918645069
 GameObject:
   m_ObjectHideFlags: 0

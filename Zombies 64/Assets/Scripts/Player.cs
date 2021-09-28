@@ -13,7 +13,19 @@ public class Player : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] HealthBar healthBar;
     [SerializeField] int damageInt;
-    bool canDamage;
+    
+
+    [Header("Attack Damages")]
+    [SerializeField] int Attack1;
+    [SerializeField] int Attack2;
+    [SerializeField] int Attack3;
+    [SerializeField] int Attack4;
+    [SerializeField] int Attack5;
+    bool canDamage1;
+    bool canDamage2;
+    bool canDamage3;
+    bool canDamage4;
+    bool canDamage5;
 
     [Header("Movement")]
     [SerializeField] float moveSpeed = 6f;    
@@ -113,9 +125,29 @@ public class Player : MonoBehaviour
             TakeDamage(damageInt);
         }
 
-        if (canDamage)
+        if (canDamage1)
         {
-            TakeDamage(damageInt);
+            TakeDamage(Attack1);
+        }
+
+        if (canDamage2)
+        {
+            TakeDamage(Attack2);
+        }
+
+        if (canDamage3)
+        {
+            TakeDamage(Attack3);
+        }
+
+        if (canDamage4)
+        {
+            TakeDamage(Attack4);
+        }
+
+        if (canDamage5)
+        {
+            TakeDamage(Attack5);
         }
     }
     void MyInput()
@@ -175,14 +207,35 @@ public class Player : MonoBehaviour
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
 
-        canDamage = false;
+        canDamage1 = false;
+        canDamage2 = false;
+        canDamage3 = false;
+        canDamage4= false;
+        canDamage5 = false;
+
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Attack")
+        if (other.gameObject.tag == "Attack1")
         {
-            canDamage = true;
+            canDamage1 = true;
+        }
+        if (other.gameObject.tag == "Attack2")
+        {
+            canDamage2 = true;
+        }
+        if (other.gameObject.tag == "Attack3")
+        {
+            canDamage3 = true;
+        }
+        if (other.gameObject.tag == "Attack4")
+        {
+            canDamage4 = true;
+        }
+        if (other.gameObject.tag == "Attack5")
+        {
+            canDamage5 = true;
         }
     }
 }
