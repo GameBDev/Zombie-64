@@ -62,6 +62,15 @@ public class Player : MonoBehaviour
     [SerializeField] float groundDistance = 0.4f;
     bool isGrounded;
 
+    [Header("Death")]
+    [SerializeField] GameObject gameOver;
+    [SerializeField] GameObject gameOverText;
+    [SerializeField] GameObject health;
+    [SerializeField] GameObject grayBar;
+    [SerializeField] GameObject healthInt;
+    [SerializeField] GameObject crossAir;
+    [SerializeField] GameObject gun;
+
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
 
@@ -120,6 +129,11 @@ public class Player : MonoBehaviour
         else if (isGrounded)
         {
             gravity = 0;
+        }
+
+        if(currentHealth <= 0)
+        {
+            GameOver();
         }
 
         text.text = currentHealth.ToString();
@@ -218,7 +232,6 @@ public class Player : MonoBehaviour
         canDamage5 = false;
 
     }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Attack1")
@@ -242,5 +255,17 @@ public class Player : MonoBehaviour
             canDamage5 = true;
         }
     }
+    void GameOver()
+    {       
+        gameOver.SetActive(true);
+        gameOverText.SetActive(true);
+        health.SetActive(false);
+        healthInt.SetActive(false);
+        grayBar.SetActive(false);
+        crossAir.SetActive(false);
+        gun.SetActive(false);
+        Destroy(gameObject);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 }
-
