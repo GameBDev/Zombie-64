@@ -112,10 +112,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oriantation: {fileID: 2947957657931543154}
-  maxHealth: 100
+  maxHealth: 200
   currentHealth: 0
   healthBar: {fileID: 0}
   damageInt: 10
+  text: {fileID: 0}
   Attack1: 10
   Attack2: 15
   Attack3: 20
@@ -130,6 +131,9 @@ MonoBehaviour:
   gravity: 0
   fallForce: 1500
   fallingAcceleration: 6
+  healthCap: 200
+  jumpCap: 25
+  sprintCap: 13
   jumpKey: 32
   sprintKey: 304
   groundDrag: 6
@@ -138,6 +142,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   groundDistance: 0.5
+  gameOver: {fileID: 0}
+  gameOverText: {fileID: 0}
+  health: {fileID: 0}
+  grayBar: {fileID: 0}
+  healthInt: {fileID: 0}
+  crossAir: {fileID: 0}
+  gun: {fileID: 0}
 --- !u!114 &2947957657695783090
 MonoBehaviour:
   m_ObjectHideFlags: 0

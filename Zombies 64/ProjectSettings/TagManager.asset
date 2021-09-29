@@ -9,6 +9,9 @@ TagManager:
   - Attack3
   - Attack4
   - Attack5
+  - PickUp1
+  - PickUp2
+  - PickUp3
   layers:
   - Default
   - TransparentFX

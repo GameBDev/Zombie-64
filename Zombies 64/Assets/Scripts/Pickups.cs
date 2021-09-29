@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class Pickups : MonoBehaviour
 {
-
+    public float delay;
 
      void OnTriggerEnter(Collider other)
      {
         if(other.tag == "Player")
         {
-            Enabled();
+            Destroy(gameObject, delay);
         }
      }
-    void Enabled()
-    {
-        
-    }
+    
 }

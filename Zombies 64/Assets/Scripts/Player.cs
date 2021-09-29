@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
     public float fallForce = 5f;
     public float fallingAcceleration;
 
+    [Header("Pick Up Caps")]
+    [SerializeField] int healthCap;
+    [SerializeField] float jumpCap;
+    [SerializeField] float sprintCap;
+
     [Header("KeyBinds")]
     [SerializeField] KeyCode jumpKey = KeyCode.Space;
     [SerializeField] KeyCode sprintKey = KeyCode.LeftShift;
@@ -130,7 +135,6 @@ public class Player : MonoBehaviour
         {
             gravity = 0;
         }
-
         if(currentHealth <= 0)
         {
             GameOver();
@@ -142,30 +146,38 @@ public class Player : MonoBehaviour
         {
             TakeDamage(damageInt);
         }
-
         if (canDamage1)
         {
             TakeDamage(Attack1);
         }
-
         if (canDamage2)
         {
             TakeDamage(Attack2);
         }
-
         if (canDamage3)
         {
             TakeDamage(Attack3);
         }
-
         if (canDamage4)
         {
             TakeDamage(Attack4);
         }
-
         if (canDamage5)
         {
             TakeDamage(Attack5);
+        }
+
+        if (currentHealth >= healthCap)
+        {
+            currentHealth = healthCap;
+        }
+        if(jumpForce >= jumpCap)
+        {
+            jumpForce = jumpCap;
+        }
+        if(sprintSpeed >= sprintCap)
+        {
+            sprintSpeed = sprintCap;
         }
     }
     void MyInput()
@@ -256,7 +268,18 @@ public class Player : MonoBehaviour
         }
 
         //Pick Up
-
+        if(other.tag == "PickUp1")
+        {
+            currentHealth += 10;
+        }
+        if (other.tag == "PickUp2")
+        {
+            sprintSpeed += 1.5f;
+        }
+        if (other.tag == "PickUp3")
+        {
+            jumpForce += 5;
+        }
     }
     void GameOver()
     {       
@@ -270,5 +293,10 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+    void Reeset()
+    {
+        sprintSpeed = 6;
+        jumpForce = 15;
     }
 }
