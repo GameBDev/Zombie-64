@@ -254,6 +254,9 @@ public class Player : MonoBehaviour
         {
             canDamage5 = true;
         }
+
+        //Pick Up
+
     }
     void GameOver()
     {       
