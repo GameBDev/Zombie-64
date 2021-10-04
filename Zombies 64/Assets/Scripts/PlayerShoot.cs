@@ -6,6 +6,8 @@ public class PlayerShoot : MonoBehaviour
     public float range = 100;
     public float knockBackForce;
 
+    public int maxAmmo;
+
     public Camera cam;
     public ParticleSystem muzzleFlash;
     public GameObject gunShotSfx;
@@ -14,6 +16,10 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+        if(maxAmmo <= 0)
+        {
+            
         }
     }
 
@@ -24,6 +30,8 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
+            maxAmmo = -1;
+
             print("We Shot Something");
             Target target = hit.transform.GetComponent<Target>();
            
