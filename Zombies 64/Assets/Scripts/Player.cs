@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] HealthBar healthBar;
     [SerializeField] int damageInt;
     [SerializeField] Text text;
+    [SerializeField] Slider slider;
 
 
     [Header("Attack Damages")]
@@ -141,6 +142,7 @@ public class Player : MonoBehaviour
         }
 
         text.text = currentHealth.ToString();
+        slider.value = currentHealth;
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
