@@ -324,7 +324,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4013209664610059145
 Transform:
@@ -1242,6 +1242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4013209664610059177}
   - component: {fileID: 4013209664609640390}
+  - component: {fileID: 1981939900}
   m_Layer: 0
   m_Name: M1911
   m_TagString: Untagged
@@ -1257,14 +1258,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4013209664609640393}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.479, y: -0.299, z: 0.51}
+  m_LocalPosition: {x: 0.4788594, y: -0.30026764, z: 0.5090533}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 7264560322666065430}
   - {fileID: 7264560322640789513}
   m_Father: {fileID: 7264560322919653028}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
 --- !u!114 &4013209664609640390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1280,10 +1281,34 @@ MonoBehaviour:
   damage: 10
   range: 150
   knockBackForce: 300
+  rotationSpeed: 0
+  gunSpin: {fileID: 1981939900}
+  _rotationSpeed: 61938
+  gun: {fileID: 4013209664609640393}
+  maxAmmo: 12
+  currentAmmo: 0
+  canShoot: 0
   cam: {fileID: 7264560322919653026}
   muzzleFlash: {fileID: 7264560322640789511}
   gunShotSfx: {fileID: 5324457944127179861, guid: 6bccbc8b1f23ce743b1c9e509c3c57d9,
     type: 3}
+  text: {fileID: 0}
+--- !u!111 &1981939900
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013209664609640393}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6f51f50e9ac57b0478378e6bec36a10d, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6f51f50e9ac57b0478378e6bec36a10d, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &7264560322275189962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1308,7 +1333,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7264560322275189962}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.065, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

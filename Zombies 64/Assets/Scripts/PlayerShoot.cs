@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class PlayerShoot : MonoBehaviour
     public float range = 100;
     public float knockBackForce;
     public float rotationSpeed = 15;
+
+    public Animation gunSpin;
 
     public int _rotationSpeed = 15;
 
@@ -19,6 +22,8 @@ public class PlayerShoot : MonoBehaviour
     public Camera cam;
     public ParticleSystem muzzleFlash;
     public GameObject gunShotSfx;
+
+    public Text text;   
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && canShoot)
@@ -26,7 +31,7 @@ public class PlayerShoot : MonoBehaviour
             Shoot();
         }
 
-        if (!canShoot && Input.GetKeyDown(KeyCode.R))     
+        if (currentAmmo < maxAmmo && Input.GetKeyDown(KeyCode.R))     
         {
             Reload();
         }
@@ -35,6 +40,7 @@ public class PlayerShoot : MonoBehaviour
         {
             canShoot = false;
         }
+        text.text = currentAmmo.ToString();
     }
 
     void Shoot()
@@ -62,11 +68,13 @@ public class PlayerShoot : MonoBehaviour
     }
     void Reload()
     {
-        //will fix later
-        //gun.transform.Rotate(_rotationSpeed * Time.deltaTime, 0 , 0);
-        
-        currentAmmo = maxAmmo;
+        canShoot = false;
+        gunSpin.Play();             
+    }
+    void CanShoot()
+    {
         canShoot = true;
+        currentAmmo = maxAmmo;
     }
     void Start()
     {
