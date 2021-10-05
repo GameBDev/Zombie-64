@@ -5,21 +5,35 @@ public class PlayerShoot : MonoBehaviour
     public float damage = 10;
     public float range = 100;
     public float knockBackForce;
+    public float rotationSpeed = 15;
+
+    public int _rotationSpeed = 15;
+
+    public GameObject gun;
 
     public int maxAmmo;
+    public int currentAmmo;
+
+    public bool canShoot;
 
     public Camera cam;
     public ParticleSystem muzzleFlash;
     public GameObject gunShotSfx;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canShoot)
         {
             Shoot();
         }
-        if(maxAmmo <= 0)
+
+        if (!canShoot && Input.GetKeyDown(KeyCode.R))     
         {
-            
+            Reload();
+        }
+
+        if(currentAmmo <= 0)
+        {
+            canShoot = false;
         }
     }
 
@@ -30,7 +44,7 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
-            maxAmmo = -1;
+            currentAmmo -= 1;
 
             print("We Shot Something");
             Target target = hit.transform.GetComponent<Target>();
@@ -45,5 +59,18 @@ public class PlayerShoot : MonoBehaviour
             }
             
         }
+    }
+    void Reload()
+    {
+        //will fix later
+        //gun.transform.Rotate(_rotationSpeed * Time.deltaTime, 0 , 0);
+        
+        currentAmmo = maxAmmo;
+        canShoot = true;
+    }
+    void Start()
+    {
+        currentAmmo = maxAmmo;
+        canShoot = true;
     }
 }
