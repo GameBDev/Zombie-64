@@ -7,8 +7,6 @@ public class PlayerShoot : MonoBehaviour
     public float range = 100;
     public float knockBackForce;
 
-    public GameObject sfxSpawn;
-
     public Animation gunSpin;
 
     public int maxAmmo;
@@ -38,12 +36,13 @@ public class PlayerShoot : MonoBehaviour
             canShoot = false;
         }
         text.text = currentAmmo.ToString();
+
     }
 
     void Shoot()
     {
         muzzleFlash.Play();
-        Instantiate(gunShotSfx, sfxSpawn.transform.position, sfxSpawn.transform.rotation);
+        Instantiate(gunShotSfx, transform.position, transform.rotation);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
@@ -78,4 +77,5 @@ public class PlayerShoot : MonoBehaviour
         currentAmmo = maxAmmo;
         canShoot = true;
     }
+    
 }
