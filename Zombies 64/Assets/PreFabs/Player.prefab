@@ -112,11 +112,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oriantation: {fileID: 2947957657931543154}
-  maxHealth: 200
+  maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
   damageInt: 10
   text: {fileID: 0}
+  slider: {fileID: 0}
   Attack1: 10
   Attack2: 15
   Attack3: 20
