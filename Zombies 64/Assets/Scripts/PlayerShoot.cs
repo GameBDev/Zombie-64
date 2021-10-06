@@ -6,13 +6,10 @@ public class PlayerShoot : MonoBehaviour
     public float damage = 10;
     public float range = 100;
     public float knockBackForce;
-    public float rotationSpeed = 15;
+
+    public GameObject sfxSpawn;
 
     public Animation gunSpin;
-
-    public int _rotationSpeed = 15;
-
-    public GameObject gun;
 
     public int maxAmmo;
     public int currentAmmo;
@@ -46,7 +43,7 @@ public class PlayerShoot : MonoBehaviour
     void Shoot()
     {
         muzzleFlash.Play();
-        Instantiate(gunShotSfx, transform.position, transform.rotation);
+        Instantiate(gunShotSfx, sfxSpawn.transform.position, sfxSpawn.transform.rotation);
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
