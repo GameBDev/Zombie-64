@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float moveSpeed = 6f;    
     [SerializeField] float airMultiplier = 0.4f;
-    float movementMultiplier = 10;
+    float movementMultiplier = 10;   
 
     [Header("Sprinting")]
     [SerializeField] float walkSpeed = 4f;
@@ -181,6 +181,7 @@ public class Player : MonoBehaviour
         {
             sprintSpeed = sprintCap;
         }
+        
     }
     void MyInput()
     {
