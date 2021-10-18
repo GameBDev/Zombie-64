@@ -300,14 +300,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537591344625501874}
-  m_LocalRotation: {x: 0.14467575, y: -0.071004055, z: 0.5023186, w: 0.8495313}
+  m_LocalRotation: {x: 0.22347042, y: -0.023728952, z: 0.5067543, w: 0.8322848}
   m_LocalPosition: {x: -3.702007e-10, y: 0.004474255, z: 3.7252902e-11}
   m_LocalScale: {x: 1, y: 1, z: 1.0000001}
   m_Children:
   - {fileID: 537591344625736340}
   m_Father: {fileID: 537591344625736336}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 23.330002, y: 11.750001, z: 65.106}
 --- !u!1 &537591344625501876
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +683,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 3b7765273b3aea448af07d98c87d2793, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -712,7 +712,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   walkPoint: {x: 1, y: 1, z: 1}
-  walkPointRange: 10
+  walkPointRange: 25
   timeBetweenAttacks: 1.4
   projectile: {fileID: 6871108289816682076, guid: b14b8f14b4e79814680ebc98d67ea3a6,
     type: 3}
@@ -720,6 +720,7 @@ MonoBehaviour:
   attackRange: 0.6
   playerInSightRange: 0
   playerInAttackRange: 0
+  zombie: {fileID: 537591344616125816}
 --- !u!114 &537591344625501901
 MonoBehaviour:
   m_ObjectHideFlags: 0

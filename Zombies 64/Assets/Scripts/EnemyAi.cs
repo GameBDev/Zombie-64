@@ -26,6 +26,8 @@ public class EnemyAi : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public Animator zombie;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -40,7 +42,7 @@ public class EnemyAi : MonoBehaviour
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (playerInAttackRange && playerInSightRange && !alreadyAttacked) AttackPlayer();
 
         attackSpawnVector = attackSpawn.position;
     }
@@ -77,11 +79,13 @@ public class EnemyAi : MonoBehaviour
 
     private void AttackPlayer()
     {
+        zombie.Play("Attack");
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
         if (!alreadyAttacked)
         {
+            
             ///Attack code here
             Rigidbody rb = Instantiate(projectile, attackSpawnVector, Quaternion.identity).GetComponent<Rigidbody>();
 
