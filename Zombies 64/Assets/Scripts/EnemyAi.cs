@@ -43,12 +43,18 @@ public class EnemyAi : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) AttackPlayer();
+        if (playerInAttackRange)
+        {
+            zombie.Play("Still");
+        }
 
         attackSpawnVector = attackSpawn.position;
     }
 
     private void Patroling()
     {
+        zombie.Play("Running");
+
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
@@ -74,6 +80,7 @@ public class EnemyAi : MonoBehaviour
 
     private void ChasePlayer()
     {
+        zombie.Play("Running");
         agent.SetDestination(player.position);
     }
 
