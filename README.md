@@ -13,3 +13,16 @@ People I got tutorials from:
 Plai: https://youtube.com/c/PlaiDev
 
 Brackys: https://m.youtube.com/channel/UCYbK_tjZ2OrIZFBvU6CCMiA
+
+People I got Models from:
+
+Daniel Darko
+Voxel Guns & Low Poly Robot on SketchFab
+
+https://sketchfab.com/danieldarko
+
+
+EliveltoX
+Zombie Model on sketchfab
+
+https://sketchfab.com/EliveltonX
