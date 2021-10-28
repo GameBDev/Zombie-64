@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 1173771995406029026}
   m_Layer: 0
   m_Name: Enemy 2.0
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1038,6 +1038,10 @@ MonoBehaviour:
   attackRange: 1.5
   playerInSightRange: 0
   playerInAttackRange: 0
+  zombie: {fileID: 0}
+  score: {fileID: 0}
+  scoreInt: 0
+  addedPoints: 0
 --- !u!195 &7869119260430585218
 NavMeshAgent:
   m_ObjectHideFlags: 0

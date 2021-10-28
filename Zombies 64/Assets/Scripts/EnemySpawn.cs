@@ -5,9 +5,7 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject[] enemies;
-    public GameObject spawn;
-
-    public Vector3 enemySpawnVector;
+    public GameObject[] spawn;
 
     public float startDelay = 1.0f;
     public float spawnInterval;
@@ -15,7 +13,6 @@ public class EnemySpawn : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("SpawnNewEnemy", startDelay, spawnInterval);
-        enemySpawnVector = spawn.transform.position;
     }
     void Update()
     {
@@ -25,7 +22,8 @@ public class EnemySpawn : MonoBehaviour
     void SpawnNewEnemy()
     {
         int enemiesIndex = Random.Range(0, enemies.Length);
+        int spawnLoctions = Random.Range(0, spawn.Length);
 
-        Instantiate(enemies[enemiesIndex], enemySpawnVector, enemies[0].transform.rotation);
+        Instantiate(enemies[enemiesIndex], spawn[spawnLoctions].transform.position, spawn[spawnLoctions].transform.rotation);
     }
 }

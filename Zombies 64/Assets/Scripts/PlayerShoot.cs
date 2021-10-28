@@ -46,10 +46,12 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range))
         {
+            
+
             currentAmmo -= 1;
 
             print("We Shot Something");
-            Target target = hit.transform.GetComponent<Target>();
+            Target target = hit.transform.GetComponent<Target>();            
            
             if (target != null)
             {
@@ -60,6 +62,10 @@ public class PlayerShoot : MonoBehaviour
                 hit.rigidbody.AddForce(-hit.normal * knockBackForce);
             }
             
+            if(hit.collider.tag == "Zombie")
+            {
+                //For Score Board
+            }
         }
     }
     void Reload()

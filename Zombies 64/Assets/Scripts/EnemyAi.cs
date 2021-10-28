@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class EnemyAi : MonoBehaviour
@@ -28,6 +29,10 @@ public class EnemyAi : MonoBehaviour
 
     public Animator zombie;
 
+    public Text score;
+    public int scoreInt;
+    public int addedPoints;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -48,6 +53,9 @@ public class EnemyAi : MonoBehaviour
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) AttackPlayer();
        
         attackSpawnVector = attackSpawn.position;
+
+        //scoreInt = score.text;
+        //score.text = scoreInt.ToString();
     }
 
     private void Patroling()
@@ -106,9 +114,10 @@ public class EnemyAi : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-
-
-
+    private void OnDestroy()
+    {
+        scoreInt = scoreInt + addedPoints;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

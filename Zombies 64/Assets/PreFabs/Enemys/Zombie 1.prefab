@@ -641,13 +641,14 @@ GameObject:
   m_Component:
   - component: {fileID: 537591344625736360}
   - component: {fileID: 537591344616125816}
+  - component: {fileID: 7598338819120435483}
   - component: {fileID: 537591344625501900}
   - component: {fileID: 537591344625501901}
   - component: {fileID: 537591344625501902}
   - component: {fileID: 537591344625501903}
   m_Layer: 0
   m_Name: Zombie 1
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -689,6 +690,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7598338819120435483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537591344625501896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c27fd69afe56a6144baedc012e546f48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - {fileID: 2905614243888921421, guid: d674ebeb5d20e114183dc1bd8bdc2537, type: 3}
+  - {fileID: 8197626249506506584, guid: 6419ec526868c4b48abe899ccc528fa0, type: 3}
+  - {fileID: 8197626249506506584, guid: 6419ec526868c4b48abe899ccc528fa0, type: 3}
+  - {fileID: 2905614243888921421, guid: d674ebeb5d20e114183dc1bd8bdc2537, type: 3}
+  - {fileID: 1613915686395460128, guid: 6316fe727db50c94fab5939050c28110, type: 3}
+  - {fileID: 1613915686395460128, guid: 6316fe727db50c94fab5939050c28110, type: 3}
+  - {fileID: 2905614243888921421, guid: d674ebeb5d20e114183dc1bd8bdc2537, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
+  - {fileID: 1307229395513339734, guid: 7bf31916c0bc48f4f9bb77b55b518506, type: 3}
 --- !u!114 &537591344625501900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,6 +750,9 @@ MonoBehaviour:
   playerInSightRange: 0
   playerInAttackRange: 0
   zombie: {fileID: 537591344616125816}
+  score: {fileID: 0}
+  scoreInt: 0
+  addedPoints: 10
 --- !u!114 &537591344625501901
 MonoBehaviour:
   m_ObjectHideFlags: 0

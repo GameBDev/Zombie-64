@@ -12,6 +12,7 @@ TagManager:
   - PickUp1
   - PickUp2
   - PickUp3
+  - Zombie
   layers:
   - Default
   - TransparentFX
