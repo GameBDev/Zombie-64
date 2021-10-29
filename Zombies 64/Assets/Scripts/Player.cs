@@ -292,7 +292,7 @@ public class Player : MonoBehaviour
         healthInt.SetActive(false);
         grayBar.SetActive(false);
         crossAir.SetActive(false);
-        gun.SetActive(false);
+        gun.SetActive(false);       
         Destroy(gameObject);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

@@ -14,6 +14,9 @@ public class PlayerShoot : MonoBehaviour
 
     public bool canShoot;
 
+    public bool trail;
+    public GameObject trailR;
+
     public Camera cam;
     public ParticleSystem muzzleFlash;
     public GameObject gunShotSfx;
@@ -36,7 +39,14 @@ public class PlayerShoot : MonoBehaviour
             canShoot = false;
         }
         text.text = currentAmmo.ToString();
-
+        if (trail)
+        {
+            trailR.SetActive(true);
+        }
+        else
+        {
+            trailR.SetActive(false);
+        }
     }
 
     void Shoot()
@@ -83,5 +93,12 @@ public class PlayerShoot : MonoBehaviour
         currentAmmo = maxAmmo;
         canShoot = true;
     }
-    
+    void TOn()
+    {
+        trail = true;
+    }
+    void TOff()
+    {
+        trail = false;
+    }
 }

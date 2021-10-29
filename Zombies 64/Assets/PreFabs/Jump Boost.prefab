@@ -105,4 +105,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 0.2
+  rotationspeed: 50
   sfx: {fileID: 5910687131871034174, guid: cbd95090bbeb9e0498616c4b433d82d5, type: 3}
