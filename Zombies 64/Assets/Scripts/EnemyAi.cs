@@ -52,10 +52,7 @@ public class EnemyAi : MonoBehaviour
        
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) AttackPlayer();
        
-        attackSpawnVector = attackSpawn.position;
-
-        //scoreInt = score.text;
-        //score.text = scoreInt.ToString();
+        attackSpawnVector = attackSpawn.position;    
     }
 
     private void Patroling()
@@ -93,7 +90,6 @@ public class EnemyAi : MonoBehaviour
 
     private void AttackPlayer()
     {
-        //zombie.Play("Idle");
         zombie.Play("Attack");        
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
@@ -114,10 +110,7 @@ public class EnemyAi : MonoBehaviour
     {
         alreadyAttacked = false;
     }
-    private void OnDestroy()
-    {
-        scoreInt = scoreInt + addedPoints;
-    }
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

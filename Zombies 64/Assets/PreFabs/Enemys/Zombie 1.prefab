@@ -767,6 +767,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   despawnTime: 0.1
+  score: {fileID: 0}
+  scoreInt: 0
+  addedPoints: 10
 --- !u!65 &537591344625501902
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@
 public class Target : MonoBehaviour
 {
     public float health;
-    public float despawnTime;
+    public float despawnTime;   
     public void TakeDamage(float damage)
     {
         health -= damage;
@@ -11,9 +11,9 @@ public class Target : MonoBehaviour
         {
             Die();
         }
-    }
+    }  
     void Die()
     {
-        Destroy(gameObject, despawnTime);
+        Destroy(gameObject, despawnTime);       
     }
 }
