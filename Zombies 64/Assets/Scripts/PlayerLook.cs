@@ -10,6 +10,8 @@ public class PlayerLook : MonoBehaviour
     [SerializeField] Transform cam;
     [SerializeField] Transform oriantation;
 
+    public bool canLook = true;
+
     float mouseX;
     float mouseY;
 
@@ -25,6 +27,21 @@ public class PlayerLook : MonoBehaviour
     }
     private void Update()
     {
+        if (canLook)
+        {
+            Look();
+        }
+        if (PauseMenu.GameIsPaused)
+        {
+            canLook = false;
+        }
+        if (!PauseMenu.GameIsPaused)
+        {
+            canLook = true;
+        }
+    }  
+    void Look()
+    {
         mouseX = Input.GetAxisRaw("Mouse X");
         mouseY = Input.GetAxisRaw("Mouse Y");
 
@@ -35,5 +52,5 @@ public class PlayerLook : MonoBehaviour
 
         cam.transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0);
         oriantation.rotation = Quaternion.Euler(0, yRotation, 0);
-    }  
+    }
 }

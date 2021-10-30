@@ -9,10 +9,13 @@ public class PlayerShoot : MonoBehaviour
 
     public Animation gunSpin;
 
+    public GameObject reloadSFX;
+
     public int maxAmmo;
     public int currentAmmo;
 
     public bool canShoot;
+    public bool outOfAmmo;
 
     public bool trail;
     public GameObject trailR;
@@ -24,7 +27,15 @@ public class PlayerShoot : MonoBehaviour
     public Text text;   
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && canShoot)
+        if (PauseMenu.GameIsPaused)
+        {
+            canShoot = false;
+        }
+        else
+        {
+            canShoot = true;
+        }
+        if (Input.GetButtonDown("Fire1") && canShoot && !outOfAmmo)
         {
             Shoot();
         }
@@ -36,7 +47,7 @@ public class PlayerShoot : MonoBehaviour
 
         if(currentAmmo <= 0)
         {
-            canShoot = false;
+            outOfAmmo = true;
         }
         text.text = currentAmmo.ToString();
         if (trail)
@@ -80,18 +91,22 @@ public class PlayerShoot : MonoBehaviour
     }
     void Reload()
     {
-        canShoot = false;
+        outOfAmmo = true;
         gunSpin.Play();             
     }
     void CanShoot()
     {
-        canShoot = true;
+        outOfAmmo = false;
         currentAmmo = maxAmmo;
     }
     void Start()
     {
         currentAmmo = maxAmmo;
         canShoot = true;
+    }
+    void PlaySound()
+    {
+        Instantiate(reloadSFX, transform.position, transform.rotation);
     }
     void TOn()
     {

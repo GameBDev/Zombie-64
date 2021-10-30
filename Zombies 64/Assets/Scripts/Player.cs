@@ -70,12 +70,9 @@ public class Player : MonoBehaviour
 
     [Header("Death")]
     [SerializeField] GameObject gameOver;
-    [SerializeField] GameObject gameOverText;
-    [SerializeField] GameObject health;
-    [SerializeField] GameObject grayBar;
-    [SerializeField] GameObject healthInt;
-    [SerializeField] GameObject crossAir;
-    [SerializeField] GameObject gun;
+    [SerializeField] GameObject hud;
+    [SerializeField] GameObject weapons;
+    [SerializeField] GameObject pause;
 
     Vector3 moveDirection;
     Vector3 slopeMoveDirection;
@@ -144,10 +141,10 @@ public class Player : MonoBehaviour
         text.text = currentHealth.ToString();
         slider.value = currentHealth;
 
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            TakeDamage(damageInt);
-        }
+        //if (Input.GetKeyDown(KeyCode.Y))
+        //{
+            //TakeDamage(damageInt);
+       //}
         if (canDamage1)
         {
             TakeDamage(Attack1);
@@ -287,12 +284,9 @@ public class Player : MonoBehaviour
     void GameOver()
     {       
         gameOver.SetActive(true);
-        gameOverText.SetActive(true);
-        health.SetActive(false);
-        healthInt.SetActive(false);
-        grayBar.SetActive(false);
-        crossAir.SetActive(false);
-        gun.SetActive(false);       
+        hud.SetActive(false);
+        weapons.SetActive(false);
+        pause.SetActive(false);
         Destroy(gameObject);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
