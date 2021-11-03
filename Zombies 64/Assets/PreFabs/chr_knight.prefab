@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7013403774032525353}
   - component: {fileID: 7013403774033328139}
   - component: {fileID: 7013403774034295499}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7013403772431108311}
   - component: {fileID: 7013403772431108310}
   - component: {fileID: 7013403774032028682}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: chr_knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

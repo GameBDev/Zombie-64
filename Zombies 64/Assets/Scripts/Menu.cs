@@ -4,7 +4,7 @@ public class Menu : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("MapSelect");
     }
     public void EndWarning()
     {
@@ -17,7 +17,19 @@ public class Menu : MonoBehaviour
     }
     public void BackToMenu()
     {
-        
+
         SceneManager.LoadScene("Main Menu");
+    }
+    public void Map1()
+    {
+        SceneManager.LoadScene("Map");
+    }
+    public void TestMsp()
+    {
+        SceneManager.LoadScene("Map 1");
+    }
+    public void Map2()
+    {
+        SceneManager.LoadScene("Map 2");
     }
 }
