@@ -1072,6 +1072,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1169145991254002102, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169145991254002102, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169145991254002102, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169145991254002102, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1612693166325505872, guid: dacb3cadecd8f774d8d249d876fb02fd,
         type: 3}
       propertyPath: m_Name
@@ -1081,6 +1101,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051579373455267313, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051579373455267313, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051579373455267313, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051579373455267313, guid: dacb3cadecd8f774d8d249d876fb02fd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5659199929203752161, guid: dacb3cadecd8f774d8d249d876fb02fd,
         type: 3}
