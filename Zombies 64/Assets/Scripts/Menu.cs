@@ -32,4 +32,8 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene("Map 2");
     }
+    public void Secret()
+    {
+        SceneManager.LoadScene("Easter Egg");
+    }
 }
