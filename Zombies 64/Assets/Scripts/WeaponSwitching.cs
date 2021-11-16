@@ -1,44 +1,38 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
-    public int selectedWeapon = 0;
+    public bool weapon1Out;
+    public bool weapon2Out;
 
-    void Start()
+    public GameObject weapon1;
+    public GameObject weapon2;
+
+
+    private void Start()
     {
-        SelectWeapon();
+        weapon1Out = true;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        int previousSelectedWeapon = selectedWeapon;
-
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            if (selectedWeapon >= transform.childCount - 1)
-                selectedWeapon = 0;
-            else
-                selectedWeapon++;
+        if (!weapon1Out && weapon2Out && Input.GetKeyDown(KeyCode.Q)){
+            SwitchWeapon1();
         }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0f)
-        {
-            if (selectedWeapon <= transform.childCount - 1)
-                selectedWeapon = 0;
-            else
-                selectedWeapon--;
+        if (weapon1Out && !weapon2Out && Input.GetKeyDown(KeyCode.Q)){
+            SwitchWeapon2();
         }
     }
-    void SelectWeapon()
+    void SwitchWeapon1()
     {
-        int i = 0;
-        foreach (Transform weapon in transform)
-        {
-            if (i == selectedWeapon)
-                weapon.gameObject.SetActive(true);
-            else
-                weapon.gameObject.SetActive(false);
-            i++;
-        }
+        print("We Should Switch Weapons 1");
+        weapon1Out = true;
+        weapon2Out = false;
     }
+    void SwitchWeapon2()
+    {
+        print("We Should Switch Weapons 2");
+        weapon1Out = false;
+        weapon2Out = true;
+    }   
+    
 }
