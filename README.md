@@ -1,6 +1,11 @@
 # Zombie-64
 I can't play actual Call of Duty so I'm making my own
 
+First demo of the game can be Downloaded on my itch page
+https://rattcorp.itch.io/zombies-64
+
+I might post updates on my discord so join here
+https://discord.gg/EzVMdMhn
 
 It's based off the Call Of Duty games.
 I'm new to game development and most the code is from tutorials.
