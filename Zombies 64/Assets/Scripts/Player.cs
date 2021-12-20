@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundMask;
     [SerializeField] float groundDistance = 0.4f;
     bool isGrounded;
+    public bool isGrappled;
 
     [Header("Death")]
     [SerializeField] GameObject gameOver;
@@ -125,17 +126,13 @@ public class Player : MonoBehaviour
 
         rb.AddForce(Vector3.down * gravity * Time.deltaTime);
 
-        if (!isGrounded)
+        if (!isGrounded && !isGrappled)
         {
             gravity = fallForce;
         }
-        else if (isGrounded)
+        else if (isGrounded && !isGrappled)
         {
             gravity = 0;
-        }
-        if(currentHealth <= 0)
-        {
-            GameOver();
         }
 
         text.text = currentHealth.ToString();
@@ -295,5 +292,9 @@ public class Player : MonoBehaviour
     {
         sprintSpeed = 6;
         jumpForce = 15;
+    }
+    public void IsGrappeled()
+    {
+        gravity = 0;
     }
 }
