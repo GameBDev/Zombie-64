@@ -66,8 +66,7 @@ public class Player : MonoBehaviour
     [Header("Ground Detection")]
     [SerializeField] LayerMask groundMask;
     [SerializeField] float groundDistance = 0.4f;
-    bool isGrounded;
-    public bool isGrappled;
+    [SerializeField] bool isGrounded;
 
     [Header("Death")]
     [SerializeField] GameObject gameOver;
@@ -108,11 +107,13 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0,1,0), groundDistance,  groundMask);
+        isGrounded = Physics.CheckSphere(transform.position - new Vector3(0,0.8f,0), groundDistance,  groundMask);
 
         MyInput();
         ControlDrag();
         ControlSpeed();
+
+        Damage();
 
         if (Input.GetKeyDown(jumpKey) && isGrounded)
         {
@@ -121,18 +122,22 @@ public class Player : MonoBehaviour
 
         slopeMoveDirection = Vector3.ProjectOnPlane(moveDirection, slopeHit.normal);
 
-
-        gravity = Mathf.Lerp(gravity, fallForce, acceleration * Time.deltaTime);
+        gravity = Mathf.Lerp(gravity, fallForce, fallingAcceleration * Time.deltaTime);
 
         rb.AddForce(Vector3.down * gravity * Time.deltaTime);
 
-        if (!isGrounded && !isGrappled)
+        if (isGrounded)
+        {
+            gravity = 0;
+        }
+        if (!isGrounded)
         {
             gravity = fallForce;
         }
-        else if (isGrounded && !isGrappled)
+
+        if(currentHealth <= 0)
         {
-            gravity = 0;
+            GameOver();
         }
 
         text.text = currentHealth.ToString();
@@ -142,39 +147,6 @@ public class Player : MonoBehaviour
         //{
             //TakeDamage(damageInt);
        //}
-        if (canDamage1)
-        {
-            TakeDamage(Attack1);
-        }
-        if (canDamage2)
-        {
-            TakeDamage(Attack2);
-        }
-        if (canDamage3)
-        {
-            TakeDamage(Attack3);
-        }
-        if (canDamage4)
-        {
-            TakeDamage(Attack4);
-        }
-        if (canDamage5)
-        {
-            TakeDamage(Attack5);
-        }
-
-        if (currentHealth >= healthCap)
-        {
-            currentHealth = healthCap;
-        }
-        if(jumpForce >= jumpCap)
-        {
-            jumpForce = jumpCap;
-        }
-        if(sprintSpeed >= sprintCap)
-        {
-            sprintSpeed = sprintCap;
-        }
         
     }
     void MyInput()
@@ -186,7 +158,7 @@ public class Player : MonoBehaviour
     }
     void Jump()
     {
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);        
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);       
     }
     void ControlSpeed()
     {
@@ -292,9 +264,42 @@ public class Player : MonoBehaviour
     {
         sprintSpeed = 6;
         jumpForce = 15;
-    }
-    public void IsGrappeled()
+    }   
+    void Damage()
     {
-        gravity = 0;
+        if (canDamage1)
+        {
+            TakeDamage(Attack1);
+        }
+        if (canDamage2)
+        {
+            TakeDamage(Attack2);
+        }
+        if (canDamage3)
+        {
+            TakeDamage(Attack3);
+        }
+        if (canDamage4)
+        {
+            TakeDamage(Attack4);
+        }
+        if (canDamage5)
+        {
+            TakeDamage(Attack5);
+        }
+
+        if (currentHealth >= healthCap)
+        {
+            currentHealth = healthCap;
+        }
+        if (jumpForce >= jumpCap)
+        {
+            jumpForce = jumpCap;
+        }
+        if (sprintSpeed >= sprintCap)
+        {
+            sprintSpeed = sprintCap;
+        }
+
     }
 }

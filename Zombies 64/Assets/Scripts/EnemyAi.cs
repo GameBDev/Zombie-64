@@ -33,6 +33,11 @@ public class EnemyAi : MonoBehaviour
     public int scoreInt;
     public int addedPoints;
 
+    public ParticleSystem HitP;
+
+    public Transform PTransform;
+
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -52,7 +57,8 @@ public class EnemyAi : MonoBehaviour
        
         if (playerInAttackRange && playerInSightRange && !alreadyAttacked) AttackPlayer();
        
-        attackSpawnVector = attackSpawn.position;    
+        attackSpawnVector = attackSpawn.position;
+
     }
 
     private void Patroling()
@@ -118,4 +124,13 @@ public class EnemyAi : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
+    public void SightRangeDis()
+    {
+        sightRange = 10000;
+    }
+    //Blood Particals(Not to good, needs work)
+    //public void Hit()
+    //{
+        //Instantiate(HitP, PTransform.position, PTransform.rotation);
+    //}
 }

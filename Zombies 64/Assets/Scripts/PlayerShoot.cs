@@ -5,7 +5,10 @@ public class PlayerShoot : MonoBehaviour
 {
     public float damage = 10;
     public float range = 100;
+    public float fireRate;
     public float knockBackForce;
+    
+    private float nextFire;
 
     public Animation gunSpin;
 
@@ -35,7 +38,7 @@ public class PlayerShoot : MonoBehaviour
         {
             canShoot = true;
         }
-        if (Input.GetButtonDown("Fire1") && canShoot && !outOfAmmo)
+        if (Input.GetButton("Fire1") && canShoot && !outOfAmmo && Time.time > nextFire)
         {
             Shoot();
         }
@@ -61,7 +64,8 @@ public class PlayerShoot : MonoBehaviour
     }
 
     void Shoot()
-    {
+    {       
+        nextFire = Time.time + fireRate;
         muzzleFlash.Play();
         Instantiate(gunShotSfx, transform.position, transform.rotation);
         RaycastHit hit;
@@ -69,11 +73,11 @@ public class PlayerShoot : MonoBehaviour
         {
             
 
-            currentAmmo -= 1;
-
+            currentAmmo -= 1;           
             print("We Shot Something");
-            Target target = hit.transform.GetComponent<Target>();            
-           
+            Target target = hit.transform.GetComponent<Target>();
+            EnemyAi enemyAI = hit.transform.GetComponent<EnemyAi>();
+
             if (target != null)
             {
                 target.TakeDamage(damage);
@@ -82,10 +86,15 @@ public class PlayerShoot : MonoBehaviour
             {
                 hit.rigidbody.AddForce(-hit.normal * knockBackForce);
             }
+            if(enemyAI != null)
+            {
+                enemyAI.SightRangeDis();
+                //enemyAI.Hit();
+            }
             
             if(hit.collider.tag == "Zombie")
             {
-                //For Score Board
+                print("It Works");
             }
         }
     }
