@@ -92,6 +92,7 @@ public class EnemyAi : MonoBehaviour
     {
         zombie.Play("Running");
         agent.SetDestination(player.position);
+        sightRange = 9999;
     }
 
     private void AttackPlayer()

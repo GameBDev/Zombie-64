@@ -2,13 +2,38 @@
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
-    public void StartGame()
+    public GameObject menu;
+    public GameObject credits;
+    public GameObject warning;
+    public GameObject mapSelect;
+
+    private void Start()
     {
-        SceneManager.LoadScene("MapSelect");
+        menu.SetActive(false);
+        credits.SetActive(false);
+        mapSelect.SetActive(false);
+        warning.SetActive(true);
     }
     public void EndWarning()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        menu.SetActive(true);
+        credits.SetActive(false);
+        mapSelect.SetActive(false);
+        warning.SetActive(false);
+    }
+    public void StartGame()
+    {
+        menu.SetActive(false);
+        credits.SetActive(false);
+        mapSelect.SetActive(true);
+        warning.SetActive(false);
+    }
+    public void Credits()
+    {
+        menu.SetActive(false);
+        credits.SetActive(true);
+        mapSelect.SetActive(false);
+        warning.SetActive(false);
     }
     public void Quit()
     {
@@ -17,7 +42,6 @@ public class Menu : MonoBehaviour
     }
     public void BackToMenu()
     {
-
         SceneManager.LoadScene("Main Menu");
     }
     public void Map1()
