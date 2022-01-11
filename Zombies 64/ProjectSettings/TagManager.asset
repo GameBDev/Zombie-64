@@ -13,6 +13,8 @@ TagManager:
   - PickUp2
   - PickUp3
   - Zombie
+  - Key1
+  - Key2
   layers:
   - Default
   - TransparentFX

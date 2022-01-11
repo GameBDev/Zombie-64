@@ -81,6 +81,8 @@ public class Player : MonoBehaviour
 
     RaycastHit slopeHit;
 
+    public GameObject fi;
+  
     private bool OnSlope()
     {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight / 2 + 0.5f))
@@ -104,6 +106,8 @@ public class Player : MonoBehaviour
 
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+        DoorKey key = fi.GetComponent<DoorKey>();
     }
     private void Update()
     {
@@ -215,6 +219,11 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        if(other.gameObject.tag == "Key1")
+        {
+            key.hasKey = true;
+        }
+
         if (other.gameObject.tag == "Attack1")
         {
             canDamage1 = true;
