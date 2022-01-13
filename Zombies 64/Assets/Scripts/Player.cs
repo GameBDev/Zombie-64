@@ -221,7 +221,7 @@ public class Player : MonoBehaviour
     {
         if(other.gameObject.tag == "Key1")
         {
-            key.hasKey = true;
+            //key.hasKey = true;
         }
 
         if (other.gameObject.tag == "Attack1")
