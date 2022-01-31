@@ -5477,6 +5477,7 @@ MonoBehaviour:
   hud: {fileID: 6508808960193093042}
   weapons: {fileID: 1928510749126954326}
   pause: {fileID: 482840144948591167}
+  fi: {fileID: 0}
 --- !u!114 &2123488916375200878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6120,6 +6121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c315eb5916c83f4b9ad020a7b1ad7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  credits: {fileID: 0}
+  warning: {fileID: 0}
+  mapSelect: {fileID: 0}
 --- !u!1 &482840145188913451
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,7 +7290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab29e00142585c44bdc2e15aab1460d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 25
+  damage: 10
   range: 150
   fireRate: 0.1
   knockBackForce: 25
@@ -8696,7 +8701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab29e00142585c44bdc2e15aab1460d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 50
   range: 150
   fireRate: 0.3
   knockBackForce: 300
@@ -10025,6 +10030,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c315eb5916c83f4b9ad020a7b1ad7b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menu: {fileID: 0}
+  credits: {fileID: 0}
+  warning: {fileID: 0}
+  mapSelect: {fileID: 0}
 --- !u!1 &7206514610001684739
 GameObject:
   m_ObjectHideFlags: 0
