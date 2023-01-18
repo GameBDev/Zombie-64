@@ -1,7 +1,8 @@
 # Zombie-64
+I'm Done With This Do What Ever
 I can't play actual Call of Duty so I'm making my own
 
-First demo of the game can be Downloaded on my itch page
+Second demo of the game can be Downloaded on my itch page
 https://rattcorp.itch.io/zombies-64
 
 I might post updates on my discord so join here
